@@ -96,9 +96,9 @@ export default {
       type: Number,
       default: () => plugin.defaults.max,
     },
-    allowDuplicates: {
+    ignoreDuplicates: {
       type: Boolean,
-      default: () => plugin.defaults.allowDuplicates,
+      default: () => plugin.defaults.ignoreDuplicates,
     },
     closeOnClick: {
       type: Boolean,
@@ -197,7 +197,7 @@ export default {
           shoutItem => shoutItem.title === event.title && shoutItem.text === event.text,
         ),
       );
-      const canAdd = this.allowDuplicates ? isDuplicate : false;
+      const canAdd = this.ignoreDuplicates ? !isDuplicate : true;
       if (!canAdd) return;
       if (direction) {
         this.list.push(item);

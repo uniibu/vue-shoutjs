@@ -974,12 +974,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b11e2a0-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/Shouter.vue?vue&type=template&id=61954df2&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b11e2a0-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/Shouter.vue?vue&type=template&id=a23131e8&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-shout-group",style:(_vm.styles)},[_c('velocity',{on:{"enter":_vm.enter,"leave":_vm.leave,"after-leave":_vm.clean}},_vm._l((_vm.active),function(item){return _c('div',{key:item.id,staticClass:"vue-shout-wrapper",attrs:{"data-id":item.id}},[_vm._t("body",[_c('div',{class:_vm.notifyClass(item),on:{"click":function($event){return _vm.destroyIfNecessary(item)}}},[(item.title)?_c('div',{staticClass:"vue-shout-title",domProps:{"innerHTML":_vm._s(item.title)}}):_vm._e(),_c('div',{staticClass:"vue-shout-content",domProps:{"innerHTML":_vm._s(item.text)}})])],{"item":item,"close":function () { return _vm.destroy(item); }})],2)}),0)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/Shouter.vue?vue&type=template&id=61954df2&
+// CONCATENATED MODULE: ./src/Shouter.vue?vue&type=template&id=a23131e8&
 
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
@@ -1360,10 +1360,10 @@ var STATE = {
         return main.defaults.max;
       }
     },
-    allowDuplicates: {
+    ignoreDuplicates: {
       type: Boolean,
       default: function _default() {
-        return main.defaults.allowDuplicates;
+        return main.defaults.ignoreDuplicates;
       }
     },
     closeOnClick: {
@@ -1483,7 +1483,7 @@ var STATE = {
       var isDuplicate = Boolean(this.active.find(function (shoutItem) {
         return shoutItem.title === event.title && shoutItem.text === event.text;
       }));
-      var canAdd = this.allowDuplicates ? isDuplicate : false;
+      var canAdd = this.ignoreDuplicates ? !isDuplicate : true;
       if (!canAdd) return;
 
       if (direction) {
@@ -1658,7 +1658,7 @@ function () {
   duration: 3000,
   delay: 0,
   max: Infinity,
-  allowDuplicates: true,
+  ignoreDuplicates: false,
   closeOnClick: true,
   triggerOnHidden: false,
   sync: false,

@@ -8,7 +8,7 @@ export default {
   duration: 3000,
   delay: 0,
   max: Infinity,
-  allowDuplicates: true,
+  ignoreDuplicates: false,
   closeOnClick: true,
   triggerOnHidden: false,
   sync: false,
