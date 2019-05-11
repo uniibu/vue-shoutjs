@@ -110,7 +110,7 @@ export default {
     },
     queue: {
       type: [String, Boolean],
-      default: () => plugin.derfaults.queue,
+      default: () => plugin.defaults.queue,
     },
   },
   data() {
