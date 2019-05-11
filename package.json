@@ -1,0 +1,85 @@
+{
+  "name": "vue-shoutjs",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name vue-shoutjs ./src/main.js",
+    "lint": "vue-cli-service lint",
+    "test:e2e": "vue-cli-service test:e2e"
+  },
+  "main": "dist/vue-shoutjs.umd.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uniibu/vue-shoutjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uniibu/vue-shoutjs/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "web",
+    "front-end",
+    "vue",
+    "vuejs",
+    "notification",
+    "vue-notification",
+    "vue-notifications",
+    "vue-toast",
+    "toasted",
+    "vue-toasted"
+  ],
+  "peerDependencies": {
+    "vue": "^2.6.0"
+  },
+  "dependencies": {
+    "shortid": "^2.2.14",
+    "velocity-animate": "^2.0.5"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-e2e-nightwatch": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "core-js": "^2.6.5",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "no-console": "error",
+      "no-param-reassign": "off",
+      "no-plusplus": "off",
+      "import/prefer-default-export": "off",
+      "no-prototype-builtins": "off",
+      "class-methods-use-this": "off",
+      "import/no-cycle": "off"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
